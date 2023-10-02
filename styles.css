@@ -1,0 +1,71 @@
+body
+{
+	color: #000000;
+	background-color: #ffffff;
+	font-family: Arial;
+	margin: 50px;
+	text-align: center;
+}
+
+hr
+{
+	margin: 25px 0px;
+}
+
+a
+{
+	color: #0000ff;
+}
+
+a:hover
+{
+	color: #ff0000;
+}
+
+table
+{
+	margin: 0px auto;
+	border: none;
+}
+
+table th, table td
+{
+	margin: 3px;
+	padding: 4px;
+}
+
+th
+{
+	background-color: #cccccc;
+	vertical-align: bottom;
+}
+
+td
+{
+	width: 120px;
+	text-align: center;
+	vertical-align: top;
+	border-bottom: solid 2px #cccccc;
+	font-size: smaller;
+}
+
+td a
+{
+	text-decoration: none;
+}
+
+.WaypointCoords img
+{
+	margin-bottom: 4px;
+	vertical-align: middle;
+}
+
+.WaypointName
+{
+	text-align: left;
+}
+
+.WaypointCoords
+{
+	font-family: monospace;
+}
