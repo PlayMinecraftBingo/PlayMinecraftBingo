@@ -3,13 +3,7 @@ body
 	color: #000000;
 	background-color: #ffffff;
 	font-family: Arial;
-	margin: 50px;
-	text-align: center;
-}
-
-hr
-{
-	margin: 25px 0px;
+	font-size: 12pt;
 }
 
 a
@@ -22,50 +16,48 @@ a:hover
 	color: #ff0000;
 }
 
-table
+div.flexcontainer
 {
-	margin: 0px auto;
-	border: none;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
-table th, table td
+div.flexcell
 {
-	margin: 3px;
-	padding: 4px;
+	margin: 15px;
+	padding: 0px 30px 30px;
+	align-self: flex-start;
+	border: solid 1px #898989;
 }
 
-th
+p, div.flexcell
 {
-	background-color: #cccccc;
-	vertical-align: bottom;
-}
-
-td
-{
-	width: 120px;
 	text-align: center;
-	vertical-align: top;
-	border-bottom: solid 2px #cccccc;
-	font-size: smaller;
 }
 
-td a
+p.pageheading
 {
-	text-decoration: none;
+	text-decoration: underline;
 }
 
-.WaypointCoords img
+p.pageheading, p.heading, p.subheading
 {
-	margin-bottom: 4px;
-	vertical-align: middle;
+	font-weight: bold;
 }
 
-.WaypointName
+p.pageheading, p.heading
 {
-	text-align: left;
+	font-size: 24pt;
 }
 
-.WaypointCoords
+p.subheading
 {
-	font-family: monospace;
+	font-size: 18pt;
+}
+
+p.version
+{
+	color: #009900;
 }
