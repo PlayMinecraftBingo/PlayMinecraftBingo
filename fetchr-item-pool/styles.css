@@ -1,0 +1,100 @@
+body
+{
+	font-family: Arial;
+	font-size: 12pt;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+div.itemcats
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+div.itemcat
+{
+	margin: 10px;
+	padding: 0px 20px 20px;
+	align-self: flex-start;
+}
+
+p
+{
+	text-align: center;
+}
+
+p.pagetitle
+{
+	font-weight: bold;
+	font-size: 24pt;
+	text-decoration: underline;
+}
+
+table.itemcat
+{
+	margin: 0px auto;
+	border-spacing: 0px;
+	width: 225px;
+}
+
+table.itemcat td
+{
+	border-bottom: solid 1px #898989;
+}
+
+table.itemcat td.weight
+{
+	width: 25px;
+}
+
+.duplicateItem
+{
+	background-color: #D2E0FB;
+}
+
+table.itemcat th
+{
+	background-color: #898989;
+	color: #ffffff;
+	text-align: left;
+}
+
+table.itemcat th, table.itemcat td
+{
+	vertical-align: middle;
+	padding: 2px;
+}
+
+table.itemcat th.weight, table.itemcat td.weight
+{
+	text-align: right;
+}
+
+table.itemcat td.invicon, table.itemcat td img
+{
+	width: 32px;
+}
+
+table.itemcat td img
+{	height: 32px;
+	image-rendering: pixelated;
+	vertical-align: middle;
+}
+
+img
+{
+	border: none;
+}
+
+p.catheading
+{
+	font-weight: bold;
+}
+
+p.version
+{
+	color: #009900;
+}
