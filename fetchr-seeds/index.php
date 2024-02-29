@@ -87,10 +87,13 @@ $showpreviews = $dbRow["showpreviews"];
 
 mysqli_free_result($dbResult);
 mysqli_close($dbConn);
+
+$bingodate = gmdate("l d F Y", $timestamp);
+
 ?>
 <html>
 	<head>
-		<title>Fetchr Weekly Challenge Seeds - Friday 03 November 2023</title>
+		<title>Fetchr Weekly Challenge Seeds - <?php echo $bingodate; ?></title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<link rel="icon" type="image/png" href="../images/mc-items/Invicon_Buried_Treasure_Map.png">
 	</head>
@@ -98,7 +101,7 @@ mysqli_close($dbConn);
 		<p class="bingotitle">Fetchr Weekly Challenge Seeds</p>
 		<p class="alertbox">Due to the large number of breaking changes announced in snapshot <a href="https://www.minecraft.net/en-us/article/minecraft-snapshot-24w09a" target="_blank">24w09a</a>, and in anticipation of the large amount of work it will likely take NeunEinser to update Fetchr to accommodate for them, <strong>the weekly seed challenges will be remaining on 1.20.2</strong> for the foreseeable future.</p>
 		<p class="version">Version <?php echo $fver; ?> for Minecraft <?php echo $mcver; ?></p>
-		<p class="bingodate"><?php echo gmdate("l d F Y", $timestamp); ?></p>
+		<p class="bingodate"><?php echo $bingodate; ?></p>
 		<div class="bingoseedrow">
 			<?php if ($seed1 != NULL) { ?>
 			<div class="bingoseed">
