@@ -109,6 +109,7 @@ $bingodate = gmdate("l d F Y", $timestamp);
 				<p class="bingoseednumber"><?php echo $seed1; ?></p>
 				<?php if ($seed4credit != NULL) { ?><p>&nbsp;</p><?php } ?>
 				<?php if ($showpreviews) RenderBingoCard($seed1); ?>
+				<p>&nbsp;</p>
 			</div>
 			<?php } ?>
 			<?php if ($seed2 != NULL) { ?>
@@ -117,6 +118,7 @@ $bingodate = gmdate("l d F Y", $timestamp);
 				<p class="bingoseednumber"><?php echo $seed2; ?></p>
 				<?php if ($seed4credit != NULL) { ?><p>&nbsp;</p><?php } ?>
 				<?php if ($showpreviews) RenderBingoCard($seed2); ?>
+				<p>&nbsp;</p>
 			</div>
 			<?php } ?>
 			<?php if ($seed3 != NULL) { ?>
@@ -125,6 +127,7 @@ $bingodate = gmdate("l d F Y", $timestamp);
 				<p class="bingoseednumber"><?php echo $seed3; ?></p>
 				<?php if ($seed4credit != NULL) { ?><p>&nbsp;</p><?php } ?>
 				<?php if ($showpreviews) RenderBingoCard($seed3); ?>
+				<p>&nbsp;</p>
 			</div>
 			<?php } ?>
 			<?php if ($seed4 != NULL) { ?>
@@ -133,6 +136,7 @@ $bingodate = gmdate("l d F Y", $timestamp);
 				<p class="bingoseednumber"><?php echo $seed4; ?></p>
 				<?php if ($seed4credit != NULL) { ?><p>(suggested by <?php echo $seed4credit; ?>)</p><?php } ?>
 				<?php if ($showpreviews) RenderBingoCard($seed4); ?>
+				<p><a href="https://d88g1jdd.forms.app/suggest-practice-seed">Suggest a Practice Seed</a></p>
 			</div>
 			<?php } ?>
 		</div>
