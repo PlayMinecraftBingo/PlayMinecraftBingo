@@ -11,6 +11,9 @@ function RenderItem($item)
 		case "Empty Map":
 			$invicon = "Empty_Locator_Map.png";
 			break;
+		case "Enchanted Book":
+			$invicon = "Enchanted_Book.gif";
+			break;
 		case "Golden Apple":
 			$invicon = "Enchanted_Apple.png";
 			break;
