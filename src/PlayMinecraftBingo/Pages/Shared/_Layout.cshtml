@@ -1,0 +1,22 @@
+﻿@using BuildInfoAdapter;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    @Html.Raw(BuildInfo.WebMetaGenerator)
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="icon" type="image/png" href="/images/mc-items/invicon_buried_treasure_map.png">
+</head>
+<body>
+    @if (ViewContext.View.Path != "/Pages/Index.cshtml")
+    {
+        <p><a href="/">Play Minecraft Bingo</a></p>
+    }
+    @RenderBody()
+    @if (ViewContext.View.Path == "/Pages/Index.cshtml")
+    {
+        <p>This website is developed and maintained by <a href="https://twitter.com/davepusey" target="_blank">Dave Pusey</a>.</p>
+        <p>Redistribution of the original Minecraft Bingo world is with the permission of <a href="https://twitter.com/lorgon111" target="_blank">Dr. Brian Lorgon111</a>.</p>
+    }
+</body>
+</html>

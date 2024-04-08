@@ -1,0 +1,6 @@
+Thumbs.db
+*.user
+/src/.vs/
+/src/**/.config/
+/src/**/bin/
+/src/**/obj/
