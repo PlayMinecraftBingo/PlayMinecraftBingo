@@ -99,7 +99,7 @@ $bingodate = gmdate("l d F Y", $timestamp);
 	</head>
 	<body>
 		<p class="bingotitle">Fetchr Weekly Challenge Seeds</p>
-		<p class="alertbox">Due to the large number of breaking changes announced in snapshot <a href="https://www.minecraft.net/en-us/article/minecraft-snapshot-24w09a" target="_blank">24w09a</a>, and in anticipation of the large amount of work it will likely take NeunEinser to update Fetchr to accommodate for them, <strong>the weekly seed challenges will be remaining on 1.20.2</strong> for the foreseeable future.</p>
+		<p class="alertbox">Testing of the Fetchr 5.1.2 pre-release has begun.<br /><br />Once there is an official stable release and that has also been tested successfully, I'll make a decision and announcement with regards to when the Weekly Challenge Seeds will transition to this new version.</p>
 		<p class="version">Version <?php echo $fver; ?> for Minecraft <?php echo $mcver; ?></p>
 		<p class="bingodate"><?php echo $bingodate; ?></p>
 		<div class="bingoseedrow">
