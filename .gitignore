@@ -2,5 +2,8 @@ Thumbs.db
 *.user
 /src/.vs/
 /src/**/.config/
-/src/**/bin/
+/src/**/bin/Debug/
+/src/**/bin/Release/net8.0/*.*
+/src/**/bin/Release/net8.0/linux-x64/
+/src/**/bin/Release/net8.0/runtimes/
 /src/**/obj/
