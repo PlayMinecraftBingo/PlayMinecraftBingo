@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -27,6 +28,8 @@ namespace PlayMinecraftBingo
             app.UseAuthorization();
 
             app.MapRazorPages();
+
+            app.MapGet("/fetchr-seed-viewer/random", () => Results.Redirect("/fetchr-seed-viewer/" + FetchrSeeds.Random()));
 
 			app.Run();
         }

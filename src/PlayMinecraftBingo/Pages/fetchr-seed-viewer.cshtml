@@ -1,14 +1,16 @@
 ﻿@page "{seed:int?}"
 @model PlayMinecraftBingo.Pages.fetchr_seed_viewerModel
 @{
-	string PageTitle = "Fetchr Seed Viewer" + (Model.Seed == 0 ? "" : " - " + Model.Seed);
-	ViewData["Title"] = PageTitle;
+	ViewData["Title"] = "Fetchr Seed Viewer";
 }
-<p class="pageheading">@PageTitle</p>
+<p class="pageheading">Fetchr Seed Viewer</p>
 <p class="version">Version 5.1.1 for Minecraft 1.20.2</p>
+
 <div class="bingoseedrow">
 	<form method="post">Seed: <input type="text" name="seed" value="" /><input type="submit" value="Go"/></form>
 </div>
+<p><a href="/fetchr-seed-viewer/random">Random</a></p>
+
 @if (Model.Seed != 0) {
 	<div class="bingoseedrow">
 		<div class="bingoseed">
