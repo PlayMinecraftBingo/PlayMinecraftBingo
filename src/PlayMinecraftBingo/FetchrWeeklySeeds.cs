@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 
@@ -17,16 +16,6 @@ namespace PlayMinecraftBingo
 		public int Seed3 { get; init; }
 		public int Seed4 { get; init; }
 		public string? Seed4Credit { get; init; }
-
-		internal static void GetCurrentJson(HttpContext context)
-		{
-			context.Response.WriteAsJsonAsync(GetCurrent());
-		}
-
-		internal static FetchrWeeklySeeds? GetCurrent()
-		{
-			return GetByPrefix(GetCurrentPrefix());
-		}
 
 		internal static SortedDictionary<DateTime,byte> GetPreviousWeeks()
 		{

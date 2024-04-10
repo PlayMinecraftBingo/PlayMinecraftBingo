@@ -28,8 +28,6 @@ namespace PlayMinecraftBingo
 
             app.MapRazorPages();
 
-            app.MapGet("/fetchr-weekly-seeds/current.json", FetchrWeeklySeeds.GetCurrentJson);
-
 			app.Run();
         }
     }
