@@ -7,7 +7,7 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {},
     ".NETCoreApp,Version=v8.0/linux-x64": {
-      "PlayMinecraftBingo/1.0.24099.1934": {
+      "PlayMinecraftBingo/1.0.24101.1954": {
         "dependencies": {
           "DavePusey.BuildInfoAdapter": "1.0.22019.1330",
           "DavePusey.libFetchrCardGen": "5.1.1",
@@ -299,7 +299,7 @@
     }
   },
   "libraries": {
-    "PlayMinecraftBingo/1.0.24099.1934": {
+    "PlayMinecraftBingo/1.0.24101.1954": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
