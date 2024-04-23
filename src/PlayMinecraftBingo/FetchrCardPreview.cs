@@ -1,20 +1,21 @@
 ﻿using libFetchrCardGen;
+using libFetchrVersion;
 using System;
 using System.Collections.Generic;
 
 namespace PlayMinecraftBingo
 {
-    public class FetchrCardPreview
+	public class FetchrCardPreview
     {
-		public static string Render(string? fetchrVersion, int seed)
+		public static string Render(FetchrVersion version, int seed)
 		{
-			if (fetchrVersion != "5.1.1") throw new NotImplementedException("Only cards for Fetchr 5.1.1 are supported at this time.");
+			if ((version != FetchrVersion.Fetchr511) && (version != FetchrVersion.Fetchr512)) throw new NotImplementedException("Only cards for Fetchr 5.1.1 and 5.1.2 are supported at this time.");
 
             if (seed == 0) return "";
 
             string htmlOut = "<table class=\"bingocard\">";
 
-            List<string> card = CardGeneration.GenerateFromSeed(seed);
+            List<string> card = FetchrCardGen.GenerateFromSeed(version, seed);
 
             for (int slot = 0; slot < 25; slot++)
             {

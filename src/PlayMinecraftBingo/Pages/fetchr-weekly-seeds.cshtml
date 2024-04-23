@@ -1,4 +1,5 @@
 ﻿@page "{prefix:min(10)?}"
+@using libFetchrVersion
 @model PlayMinecraftBingo.Pages.fetchr_weekly_seedsModel
 @{
 	ViewData["Title"] = "Fetchr Weekly Challenge Seeds";
@@ -8,14 +9,10 @@
 @if (Model.Seeds != null)
 {
 	<p class="alertbox">
-		Testing of the Fetchr 5.1.2 pre-release has begun.
-		<br /><br />
-		Once there is an official stable release and that has also been tested 
-		successfully, I'll make a decision and announcement with regards to when 
-		the Weekly Challenge Seeds will transition to this new version.
+		Weekly Challenge Seeds will transition to Fetchr 5.1.2 on Minecraft 1.20.5,<br />starting with prefix 40 on Friday 3rd May 2024.
 	</p>
 
-	<p class="version">Version @Model.Seeds.FetchrVersion for Minecraft @Model.Seeds.McVersion</p>
+	<p class="version">Version @Model.Seeds.FetchrVersion.ToVersionString() for Minecraft @Model.Seeds.McVersion</p>
 	<p class="heading">@Model.Seeds.EffectiveDate.ToString("dddd dd MMMM yyyy")</p>
 	<div class="bingoseedrow">
 		@if (Model.Seeds.Seed1 != 0)
