@@ -206,6 +206,7 @@ p.alertbox
 	background-color: #FFFFCC;
 	color: #FF0000;
 	border: dotted 1px #FF0000;
+	line-height: 18pt;
 }
 
 div#pagefooter
