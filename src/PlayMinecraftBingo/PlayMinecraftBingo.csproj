@@ -3,7 +3,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
-    <Version>1.0.24115.0927</Version>
+    <Version>1.0.24121.1040</Version>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
@@ -11,8 +11,8 @@
   <ItemGroup>
     <PackageReference Include="DavePusey.BuildInfoAdapter" Version="1.0.22019.1330" />
     <PackageReference Include="MySql.Data" Version="8.3.0" />
-    <PackageReference Include="PlayMinecraftBingo.libFetchrCardGen" Version="5.1.2" />
-    <PackageReference Include="PlayMinecraftBingo.libFetchrVersion" Version="5.1.2.1" />
+    <PackageReference Include="PlayMinecraftBingo.libFetchrCardGen" Version="5.1.3" />
+    <PackageReference Include="PlayMinecraftBingo.libFetchrVersion" Version="5.1.3" />
   </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="&quot;C:\Program Files (x86)\Dave Pusey\SetAssemblyProperties\SetAssemblyProperties.exe&quot; &quot;$(ProjectPath)&quot;" />

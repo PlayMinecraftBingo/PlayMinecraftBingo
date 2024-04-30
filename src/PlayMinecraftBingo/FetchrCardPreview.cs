@@ -9,7 +9,7 @@ namespace PlayMinecraftBingo
     {
 		public static string Render(FetchrVersion version, int seed)
 		{
-			if ((version != FetchrVersion.Fetchr511) && (version != FetchrVersion.Fetchr512)) throw new NotImplementedException("Only cards for Fetchr 5.1.1 and 5.1.2 are supported at this time.");
+			if ((version != FetchrVersion.Fetchr511) && (version != FetchrVersion.Fetchr513)) throw new NotImplementedException("Only cards for Fetchr 5.1.1 and 5.1.3 are supported at this time.");
 
             if (seed == 0) return "";
 
