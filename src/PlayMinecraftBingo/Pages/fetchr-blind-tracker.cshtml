@@ -1,0 +1,85 @@
+﻿@page
+@using libFetchrActiveItems
+@using libFetchrActiveItems.DataStructures
+@using libFetchrVersion
+@model PlayMinecraftBingo.Pages.fetchr_blind_trackerModel
+@{
+	ViewData["Title"] = "Fetchr Blind Item Tracker";
+}
+<p class="pageheading">Fetchr Blind Item Tracker</p>
+<p class="version">Version @CurrentVersions.Fetchr.ToVersionString() for Minecraft @CurrentVersions.Minecraft</p>
+<p>There are 161 items (152 unique) listed within 46 categories.</p>
+<p>Once an item has been selected from a category, no other items can be selected from the same category.</p>
+<p>This also includes other categories that the same item is also listed in.</p>
+<p>Items listed in multiple categories are <span class="inmultiplecats">highlighted in blue</span>.</p>
+<p class="alertbox">
+	This page should be considered a <strong>BETA</strong> release.<br />
+	Global tracking of items listed in multiple categories is not currently implemented.<br />
+	You will need to update each instance manually for now.
+</p>
+<p class="alertbox">
+	<input type="button" value="Reset All" onclick="ResetAll()" />
+	<input type="checkbox" id="hidecompletedcats" onchange="RefreshDisplay()" /> Hide Completed Categories
+</p>
+<div class="itemcats">
+	@{
+		string jsCheckCats1 = "";
+		string jsCheckCats2 = "";
+		int catId = 0;
+		int itemId = 0;
+	}
+	@foreach (string category in Model.CategoryList.Keys)
+	{
+		catId++;
+		string itemCatId = "itemcat" + catId.ToString().PadLeft(3, '0');
+		<div class="itemcat" id="@itemCatId">
+			<p class="catheading">@Translate.CategoryName(category)</p>
+			<table class="itemcat">
+				<tr>
+					<th>&nbsp;</th>
+					<th>Item</th>
+					<th class="blindbuttons">&nbsp;</th>
+				</tr>
+				@foreach(ItemData item in Model.CategoryList[category])
+				{
+					itemId++;
+					string itemRowId = "itemrow" + itemId.ToString().PadLeft(3, '0');
+					string itemYesId = itemRowId + "yes";
+					string itemNoId = itemRowId + "no";
+					string itemClearId = itemRowId + "clear";
+					<tr id="@itemRowId">
+						<td class="invicon">@Html.Raw(Model.RenderItem(item))</td>
+						<td class="blindbuttons">
+							@Html.Raw("<input type=\"button\" value=\"Yes\" id=\"" + itemYesId + "\" onclick=\"HaveItem(" + itemId + ")\" />")
+							@Html.Raw("<input type=\"button\" value=\"No\" id=\"" + itemNoId + "\"onclick=\"NotItem(" + itemId + ")\" />")
+							@Html.Raw("<input type=\"button\" value=\"Clear\" id=\"" + itemClearId + "\"onclick=\"ClearItem(" + itemId + ")\" />")
+						</td>
+					</tr>
+					if (jsCheckCats1.Length > 0) jsCheckCats1 += "\t\t";
+					if (jsCheckCats2.Length > 0) jsCheckCats2 += "\t\t";
+					jsCheckCats1 += "if (itemStates[" + itemId + "] == 3) catStates[" + catId + "] = 1;\r\n";
+					jsCheckCats2 += "if ((catStates[" + catId + "] == 1) && (itemStates[" + itemId + "] < 2)) itemStates[" + itemId + "] = 1;\r\n";
+				}
+			</table>
+		</div>
+	}
+</div>
+
+<hr />
+
+@{
+	catId++;
+	itemId++;
+}
+
+<script type="text/javascript">
+	var catStates = new Array(@catId).fill(0);
+	var itemStates = new Array(@itemId).fill(0);
+
+	function CheckCats()
+	{
+		@Html.Raw(jsCheckCats1)
+		@Html.Raw(@jsCheckCats2)
+	}
+</script>
+<script type="text/javascript" src="blind-tracker.js"></script>

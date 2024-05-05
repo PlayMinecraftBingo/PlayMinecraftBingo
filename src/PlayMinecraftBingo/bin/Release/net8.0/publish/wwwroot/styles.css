@@ -154,12 +154,17 @@ table.itemcat td
 	border-bottom: solid 1px #898989;
 }
 
+table.itemcat td.blindbuttons
+{
+	width: 80px;
+}
+
 table.itemcat td.weight
 {
 	width: 25px;
 }
 
-.duplicateItem
+.inmultiplecats
 {
 	background-color: #D2E0FB;
 }
@@ -177,7 +182,7 @@ table.itemcat th, table.itemcat td
 	padding: 2px;
 }
 
-table.itemcat th.weight, table.itemcat td.weight
+table.itemcat th.weight, table.itemcat td.weight, table.itemcat th.blindbuttons, table.itemcat td.blindbuttons
 {
 	text-align: right;
 }
@@ -223,4 +228,19 @@ div#pagecontent
 div#pageheader, div #pagecontent, div #pagefooter
 {
 	width: 100%;
+}
+
+.havecat
+{
+	background-color: #ccffcc !important;
+}
+
+.haveitem
+{
+	background-color: #00ff00 !important;
+}
+
+.notitem
+{
+	background-color: #ffcccc !important;
 }
