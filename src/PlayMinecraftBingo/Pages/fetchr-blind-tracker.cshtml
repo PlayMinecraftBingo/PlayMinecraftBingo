@@ -51,8 +51,8 @@
 						<td class="invicon">@Html.Raw(Model.RenderItem(item))</td>
 						<td class="blindbuttons">
 							@Html.Raw("<input type=\"button\" value=\"Yes\" id=\"" + itemYesId + "\" onclick=\"HaveItem(" + itemId + ")\" />")
-							@Html.Raw("<input type=\"button\" value=\"No\" id=\"" + itemNoId + "\"onclick=\"NotItem(" + itemId + ")\" />")
-							@Html.Raw("<input type=\"button\" value=\"Clear\" id=\"" + itemClearId + "\"onclick=\"ClearItem(" + itemId + ")\" />")
+							@Html.Raw("<input type=\"button\" value=\"No\" id=\"" + itemNoId + "\" onclick=\"NotItem(" + itemId + ")\" />")
+							@Html.Raw("<input type=\"button\" value=\"Clear\" id=\"" + itemClearId + "\" onclick=\"ClearItem(" + itemId + ")\" />")
 						</td>
 					</tr>
 					if (jsCheckCats1.Length > 0) jsCheckCats1 += "\t\t";
@@ -82,4 +82,4 @@
 		@Html.Raw(@jsCheckCats2)
 	}
 </script>
-<script type="text/javascript" src="blind-tracker.js"></script>
+<script type="text/javascript" src="/blind-tracker.js"></script>
