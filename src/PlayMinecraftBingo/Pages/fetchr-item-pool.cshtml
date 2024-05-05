@@ -1,4 +1,6 @@
 ﻿@page
+@using libFetchrActiveItems
+@using libFetchrActiveItems.DataStructures
 @using libFetchrVersion
 @model PlayMinecraftBingo.Pages.fetchr_item_poolModel
 @{
@@ -9,22 +11,22 @@
 <p>There are 161 items (152 unique) listed within 46 categories.</p>
 <p>Once an item has been selected from a category, no other items can be selected from the same category.</p>
 <p>This also includes other categories that the same item is also listed in.</p>
-<p>Items listed in multiple categories are <span class="duplicateItem">highlighted in blue</span>.</p>
+<p>Items listed in multiple categories are <span class="inmultiplecats">highlighted in blue</span>.</p>
 <div class="itemcats">
 	@foreach (string category in Model.CategoryList.Keys)
 	{
 	<div class="itemcat">
-		<p class="catheading">@category</p>
+		<p class="catheading">@Translate.CategoryName(category)</p>
 		<table class="itemcat">
 			<tr>
 				<th>&nbsp;</th>
 				<th>Item</th>
 				<th class="weight">Weight</th>
 			</tr>
-			@foreach(string item in Model.CategoryList[category].Keys) {
+			@foreach(ItemData item in Model.CategoryList[category]) {
 			<tr>
 				<td class="invicon">@Html.Raw(Model.RenderItem(item))</td>
-				<td class="weight">@Model.CategoryList[category][item]</td>
+				<td class="weight">@item.Categories.Single(x => x.Id == category).Weight</td>
 			</tr>
 			}
 		</table>
