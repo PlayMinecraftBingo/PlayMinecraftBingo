@@ -7,7 +7,7 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {},
     ".NETCoreApp,Version=v8.0/linux-x64": {
-      "PlayMinecraftBingo/1.0.24286.1242": {
+      "PlayMinecraftBingo/1.0.24286.1531": {
         "dependencies": {
           "DavePusey.BuildInfoAdapter": "1.0.22019.1330",
           "MySql.Data": "9.0.0",
@@ -305,7 +305,7 @@
     }
   },
   "libraries": {
-    "PlayMinecraftBingo/1.0.24286.1242": {
+    "PlayMinecraftBingo/1.0.24286.1531": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

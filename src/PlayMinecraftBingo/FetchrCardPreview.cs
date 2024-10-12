@@ -25,7 +25,7 @@ namespace PlayMinecraftBingo
                 string InvIcon = MinecraftItems.GetInvIcon(item);
                 string Label = MinecraftItems.GetLabel(item);
                 htmlOut += "<td";
-                htmlOut += "><img src=\"/images/mc-items/invicon_" + InvIcon + "\" alt=\"" + Label + "\" title=\"" + Label + "\" /></td>";
+                htmlOut += "><img src=\"/images/mc-items/invicon_" + InvIcon.ToLower() + "\" alt=\"" + Label + "\" title=\"" + Label + "\" /></td>";
                 if (slot % 5 == 4) htmlOut += "</tr>";
             }
 
