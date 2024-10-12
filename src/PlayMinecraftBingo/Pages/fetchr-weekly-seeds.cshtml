@@ -4,15 +4,15 @@
 @{
 	ViewData["Title"] = "Fetchr Weekly Challenge Seeds";
 	if (Model.Seeds != null) ViewData["Title"] += " - " + Model.Seeds.EffectiveDate.ToString("dddd dd MMMM yyyy");
+
+	AlertBox ab = AlertBox.GetConfig("/fetchr-weekly-seeds");
 }
 <p class="pageheading">Fetchr Weekly Challenge Seeds</p>
 @if (Model.Seeds != null)
 {
-	@if (false)
+	@if (ab.Enabled)
 	{
-		<p class="alertbox">
-			Weekly Challenge Seeds will transition to Fetchr 5.1.3 on Minecraft 1.20.4/1.20.6,<br />starting with prefix 40 on Friday 3rd May 2024.
-		</p>
+		<p class="alertbox">@Html.Raw(ab.Message)</p>
 	}
 
 	<p class="version">Version @Model.Seeds.FetchrVersion.ToVersionString() for Minecraft @Model.Seeds.McVersion</p>
@@ -93,11 +93,18 @@
 		{
 			if (previousWeeks[previousWeek] == Model.Seeds.Prefix)
 			{
-				<span style="font-weight: bold; color: #FF0000;">@previousWeeks[previousWeek]</span>
+				<span class="currentPrefix">@previousWeeks[previousWeek]</span>
 			}
 			else
 			{
 				<a href="/fetchr-weekly-seeds/@previousWeeks[previousWeek]">@previousWeeks[previousWeek]</a>
+			}
+
+			byte firstSeed = previousWeeks.First().Value;
+			byte wrapEvery = 30;
+			if ((previousWeeks[previousWeek] > firstSeed) && ((previousWeeks[previousWeek] - firstSeed) % wrapEvery == 0))
+			{
+				@Html.Raw("</p><p>");
 			}
 		}
 	}

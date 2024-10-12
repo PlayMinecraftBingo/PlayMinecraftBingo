@@ -4,11 +4,13 @@ body
 	background-color: #FFFFFF;
 	font-family: Arial;
 	font-size: 12pt;
+	margin: 0px;
 }
 
 a
 {
 	color: #0000FF;
+	text-decoration: none;
 }
 
 a:hover
@@ -56,7 +58,6 @@ p.subheading
 {
 	font-size: 18pt;
 }
-
 
 div.bingoseedrow
 {
@@ -243,4 +244,129 @@ div#pageheader, div #pagecontent, div #pagefooter
 .notitem
 {
 	background-color: #ffcccc !important;
+}
+
+.monospaced
+{
+	font-family: monospace;
+}
+
+span.currentPrefix
+{
+	font-weight: bold;
+	color: #ff0000;
+}
+
+div.fbtmItemGrid
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 0px auto;
+	max-width: 1740px;
+}
+
+div.fbtmGridCategory
+{
+	margin: 4px;
+	padding: 0px 4px 4px 4px;
+	border: solid 1px #898989;
+}
+
+div.fbtmGridCategory p
+{
+	margin: 8px 4px;
+}
+
+div.fbtmGridItem
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+div.fbtmGridItemCell img
+{
+	width: 32px;
+	height: 32px;
+	padding: 8px;
+	margin: 0px 2px;
+	background-color: #898989;
+	image-rendering: pixelated;
+}
+
+.fbtmImpliedNegative
+{
+	background-color: #ccffcc !important;
+}
+
+.fbtmCheckedNegative
+{
+	background-color: #ffcccc !important;
+}
+
+.fbtmImpliedPositive
+{
+	background-color: #ffffcc !important;
+}
+
+.fbtmCheckedPositive
+{
+	background-color: #00ff00 !important;
+}
+
+div.headerBar
+{
+	background-color: #898989;
+	color: #ffffff;
+	margin: 0px;
+	width: 100%;
+	height: 32px;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+}
+
+div.headerBar div
+{
+	width: 33%;
+	font-weight: bold;
+	margin-top: 0px;
+	padding: 8px;
+	white-space: nowrap;
+}
+
+div.headerCenter
+{
+	text-align: center;
+}
+
+div.headerLeft
+{
+	text-align: left;
+	margin-left: 8px;
+}
+
+div.headerRight
+{
+	text-align: right;
+	margin-right: 8px;
+}
+
+div.headerRight i
+{
+	margin: 0px 8px;
+}
+
+div.headerBar a
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+div.headerBar a:hover
+{
+	color: #ffff00;
+	text-decoration: none;
 }

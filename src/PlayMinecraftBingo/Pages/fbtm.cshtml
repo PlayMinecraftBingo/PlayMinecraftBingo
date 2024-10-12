@@ -1,0 +1,37 @@
+﻿@page "{seed:int}/{team:alpha}/{view:regex(grid|list)?}"
+@using libFetchrActiveItems
+@using libFetchrActiveItems.DataStructures
+@model PlayMinecraftBingo.Pages.fbtmModel
+@{
+	ViewData["Title"] = "Fetchr Blind Item Tracker";
+}
+@section ExtraHead {
+	<script type="text/javascript">
+		var seed = @Model.Seed;
+		var team = "@Model.Team";
+	</script>
+	<script type="text/javascript" src="/fbtm.js"></script>
+}
+<p class="pageheading">Fetchr Blind Item Tracker</p>
+
+<p><strong>Seed:</strong> <span class="monospaced">@Model.Seed</span></p>
+<p><strong>Team:</strong> <span class="monospaced">@Model.Team</span></p>
+
+<div class="fbtmItemGrid">
+@foreach (string category in Model.CategoryList.Keys)
+{
+	<div class="fbtmGridCategory">
+		<p><strong>@Translate.CategoryName(category)</strong></p>
+		<div class="fbtmGridItem">
+			@foreach (ItemData item in Model.CategoryList[category])
+			{
+				<div class="fbtmGridItemCell">@Html.Raw(Model.RenderItem(item))</div>
+			}
+		</div>
+	</div>
+}
+</div>
+
+<script type="text/javascript">
+	ReloadItemStates();
+</script>

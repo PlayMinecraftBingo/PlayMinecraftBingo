@@ -1,0 +1,58 @@
+﻿body
+{
+    background-color: #222222;
+    color: #ffffff;
+}
+
+a
+{
+    color: #00ffff;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: #ffff00;
+}
+
+p.version
+{
+    color: #00ff00;
+}
+
+span.currentPrefix
+{
+    font-weight: bold;
+    color: #ffff00;
+}
+
+.inmultiplecats
+{
+    color: #222222;
+    background-color: #00ccff;
+}
+
+table.itemcat th
+{
+    background-color: #494949;
+}
+
+table.itemcat td
+{
+    border-bottom: solid 1px #494949;
+}
+
+.fbtmImpliedNegative
+{
+	background-color: #008900 !important;
+}
+
+.fbtmCheckedNegative
+{
+	background-color: #890000 !important;
+}
+
+.fbtmImpliedPositive
+{
+	background-color: #898900 !important;
+}

@@ -4,14 +4,39 @@
 <head>
     <title>@ViewData["Title"]</title>
     @Html.Raw(BuildInfo.WebMetaGenerator)
+    <link rel="stylesheet" href="https://kit.fontawesome.com/29defcf563.css" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/styles.css">
+    @{
+        ViewData["DarkMode"] = Context.Request.Cookies["darkmode"] ?? "1";
+        if (ViewData["DarkMode"]?.ToString() == "1")
+        {
+            <link rel="stylesheet" type="text/css" href="/styles-dark.css">
+        }
+    }
     <link rel="icon" type="image/png" href="/images/mc-items/invicon_buried_treasure_map.png">
+    <script type="text/javascript" src="/darkmode.js"></script>
+    @RenderSection("ExtraHead", false)
 </head>
 <body>
-    @if (ViewContext.View.Path != "/Pages/Index.cshtml")
-    {
-        <p><a href="/">Play Minecraft Bingo</a></p>
-    }
+    <div class="headerBar">
+        <div class="headerLeft">&nbsp;</div>
+        @if (ViewContext.View.Path != "/Pages/Index.cshtml")
+        {
+            <div class="headerCenter"><a href="/">Play Minecraft Bingo</a></div>
+        }
+        else
+        {
+            <div class="headerCenter">&nbsp;</div>
+        }
+        <div class="headerRight">
+            @if (ViewData["DarkMode"]?.ToString() == "1")
+            {
+                <a href="javascript:SetDarkMode(0);" alt="Switch to Light Mode" title="Switch to Light Mode"><i class="fa-solid fa-sun-bright"></i></a>
+            } else {
+                <a href="javascript:SetDarkMode(1);" alt="Switch to Dark Mode" title="Switch to Dark Mode"><i class="fa-solid fa-moon-stars"></i></a>
+            }
+        </div>
+    </div>
     @RenderBody()
     @if (ViewContext.View.Path == "/Pages/Index.cshtml")
     {
