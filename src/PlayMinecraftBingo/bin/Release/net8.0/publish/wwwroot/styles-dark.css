@@ -1,4 +1,4 @@
-﻿body
+body
 {
     background-color: #222222;
     color: #ffffff;
@@ -40,19 +40,4 @@ table.itemcat th
 table.itemcat td
 {
     border-bottom: solid 1px #494949;
-}
-
-.fbtmImpliedNegative
-{
-	background-color: #008900 !important;
-}
-
-.fbtmCheckedNegative
-{
-	background-color: #890000 !important;
-}
-
-.fbtmImpliedPositive
-{
-	background-color: #898900 !important;
 }
