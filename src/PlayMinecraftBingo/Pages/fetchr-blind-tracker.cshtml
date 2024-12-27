@@ -7,8 +7,8 @@
 	ViewData["Title"] = "Fetchr Blind Item Tracker";
 }
 <p class="pageheading">Fetchr Blind Item Tracker</p>
-<p class="version">Version @CurrentVersions.Fetchr.ToVersionString() for Minecraft @CurrentVersions.Minecraft</p>
-<p>There are 161 items (152 unique) listed within 46 categories.</p>
+<p class="version">Version @CurrentVersions.Fetchr.ToVersionString() for Minecraft @CurrentVersions.Minecraft.ToVersionString()</p>
+<p>There are @Model.ItemCount items (@Model.UniqueItemCount unique) listed within @Model.CategoryCount categories.</p>
 <p>Once an item has been selected from a category, no other items can be selected from the same category.</p>
 <p>This also includes other categories that the same item is also listed in.</p>
 <p>Items listed in multiple categories are <span class="inmultiplecats">highlighted in blue</span>.</p>
@@ -28,12 +28,12 @@
 		int catId = 0;
 		int itemId = 0;
 	}
-	@foreach (string category in Model.CategoryList.Keys)
+	@foreach (ItemPoolCategory category in Model.CategoryList.Keys)
 	{
 		catId++;
 		string itemCatId = "itemcat" + catId.ToString().PadLeft(3, '0');
 		<div class="itemcat" id="@itemCatId">
-			<p class="catheading">@Translate.CategoryName(category)</p>
+            <p class="catheading">@category.TranslationName</p>
 			<table class="itemcat">
 				<tr>
 					<th>&nbsp;</th>

@@ -17,7 +17,7 @@ namespace PlayMinecraftBingo.Pages
 		[BindProperty(SupportsGet = true)]
 		public string? View { get; set; } = "grid";
 
-		public Dictionary<string, List<ItemData>> CategoryList { get; set; } = ItemPool.GetSortedItemPool(CurrentVersions.Fetchr);
+		public Dictionary<ItemPoolCategory, List<ItemData>> CategoryList { get; set; } = ItemPool.GetSortedItemPool(new(CurrentVersions.Fetchr, CurrentVersions.Minecraft));
 
 		public void OnGet()
         {
@@ -25,11 +25,16 @@ namespace PlayMinecraftBingo.Pages
 
 		public string RenderItem(ItemData item)
 		{
-			string itemName = Translate.ItemName(item);
-			string invIcon = MinecraftItems.GetInvIconByName(itemName);
-			string itemId = item.Item.Id[(item.Item.Id.LastIndexOf(':') + 1)..];
+			return RenderItem(new FetchrItem(item));
+		}
 
-			string htmlOut = "<img class=\"mcitem\" data-mcitem=\"" + itemId + "\" src=\"/images/mc-items/invicon_" + invIcon.ToLower() + "\" alt=\"" + itemName + "\" title=\"" + itemName + "\" />";
+		public string RenderItem(FetchrItem item)
+		{
+			string itemName = item.Label;
+			string invIcon = item.InvIcon;
+			string itemId = item.FetchrId;
+
+			string htmlOut = "<img class=\"mcitem\" data-mcitem=\"" + itemId + "\" src=\"/images/mc-items/" + invIcon.ToLower() + "\" alt=\"" + itemName + "\" title=\"" + itemName + "\" />";
 			return htmlOut;
 		}
 	}

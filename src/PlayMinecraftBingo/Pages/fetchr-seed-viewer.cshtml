@@ -1,11 +1,12 @@
-﻿@page "{seed:int?}"
+@page "{seed:int?}"
 @using libFetchrVersion
+@using libMinecraftVersion
 @model PlayMinecraftBingo.Pages.fetchr_seed_viewerModel
 @{
 	ViewData["Title"] = "Fetchr Seed Viewer";
 }
 <p class="pageheading">Fetchr Seed Viewer</p>
-<p class="version">Version @CurrentVersions.Fetchr.ToVersionString() for Minecraft @CurrentVersions.Minecraft</p>
+<p class="version">Version @CurrentVersions.Fetchr.ToVersionString() for Minecraft @CurrentVersions.Minecraft.ToVersionString()</p>
 
 <div class="bingoseedrow">
 	<form method="post">Seed: <input type="text" name="seed" value="" /><input type="submit" value="Go"/></form>
@@ -17,7 +18,7 @@
 		<div class="bingoseed">
 			<p class="bingoseedtitle">Card Preview</p>
 			<p class="bingoseednumber">@Model.Seed</p>
-			@Html.Raw(FetchrCardPreview.Render(FetchrVersion.Fetchr513, Model.Seed))
+            @Html.Raw(FetchrCardPreview.Render(new(CurrentVersions.Fetchr, CurrentVersions.Minecraft), Model.Seed))
 			<p>&nbsp;</p>
 		</div>
 	</div>

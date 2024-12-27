@@ -30,8 +30,9 @@ namespace PlayMinecraftBingo
             app.MapRazorPages();
 
             app.MapGet("/fetchr-seed-viewer/random", () => Results.Redirect("/fetchr-seed-viewer/" + FetchrSeeds.Random()));
+            app.MapGet("/fetchr-seed-picking-helper/random", () => Results.Redirect("/fetchr-seed-picking-helper/" + FetchrSeeds.Random()));
 
-			app.Run();
+            app.Run();
         }
     }
 }

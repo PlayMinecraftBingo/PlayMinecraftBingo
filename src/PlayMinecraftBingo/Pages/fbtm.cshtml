@@ -1,6 +1,7 @@
 ﻿@page "{seed:int}/{team:alpha}/{view:regex(grid|list)?}"
 @using libFetchrActiveItems
 @using libFetchrActiveItems.DataStructures
+@using libFetchrVersion
 @model PlayMinecraftBingo.Pages.fbtmModel
 @{
 	ViewData["Title"] = "Fetchr Blind Item Tracker";
@@ -14,14 +15,14 @@
 }
 <p class="pageheading">Fetchr Blind Item Tracker</p>
 
-<p><strong>Seed:</strong> <span class="monospaced">@Model.Seed</span></p>
-<p><strong>Team:</strong> <span class="monospaced">@Model.Team</span></p>
+<p class="version">Version @CurrentVersions.Fetchr.ToVersionString() for Minecraft @CurrentVersions.Minecraft.ToVersionString()</p>
+<p><strong>Seed:</strong> <span class="monospaced">@Model.Seed</span> <strong>Team:</strong> <span class="monospaced">@Model.Team</span></p>
 
 <div class="fbtmItemGrid">
-@foreach (string category in Model.CategoryList.Keys)
+@foreach (ItemPoolCategory category in Model.CategoryList.Keys)
 {
 	<div class="fbtmGridCategory">
-		<p><strong>@Translate.CategoryName(category)</strong></p>
+		<p><strong>@category.TranslationName</strong></p>
 		<div class="fbtmGridItem">
 			@foreach (ItemData item in Model.CategoryList[category])
 			{
