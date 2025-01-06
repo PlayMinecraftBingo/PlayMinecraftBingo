@@ -6,7 +6,7 @@ namespace PlayMinecraftBingo
 {
 	public class FetchrCardPreview
     {
-		public static string Render(FetchrVersionData version, int seed, bool highlightBad = false)
+		public static string Render(FetchrVersionData version, int seed, bool highlightBad = false, bool withLabels = false)
 		{
             if (seed == 0) return "";
 
@@ -24,7 +24,9 @@ namespace PlayMinecraftBingo
                 htmlOut += "<td";
                 if (highlightBad && IsSlowMobDrop(item)) htmlOut += " class=\"slowmobdrop\"";
                 else if (highlightBad && IsBad(item)) htmlOut += " class=\"bad\"";
-                htmlOut += "><img src=\"/images/mc-items/" + InvIcon.ToLower() + "\" alt=\"" + Label + "\" title=\"" + Label + "\" /></td>";
+                htmlOut += "><img src=\"/images/mc-items/" + InvIcon.ToLower() + "\" alt=\"" + Label + "\" title=\"" + Label + "\" />";
+                if (withLabels) htmlOut += "<br /><span style=\"font-size: smaller;\">" + Label + "</span>";
+                htmlOut += "</td>";
                 if (slot % 5 == 4) htmlOut += "</tr>";
             }
 
@@ -39,12 +41,16 @@ namespace PlayMinecraftBingo
             {
                 "bone" or
                 "cake" or
+                "chiseled_resin_bricks" or
                 "egg" or
                 "ender_pearl" or
                 "fermented_spider_eye" or
                 "firework_rocket" or
                 "gunpowder" or
                 "lead" or
+                "open_eyeblossom" or
+                "resin_block" or
+                "resin_clump" or
                 "slime_ball" or
                 "spider_eye" or
                 "sticky_piston" or
@@ -66,6 +72,7 @@ namespace PlayMinecraftBingo
                 "big_dripleaf" or
                 "clock" or
                 "compass" or
+                "creaking_heart" or
                 "detector_rail" or
                 "diamond_axe" or
                 "diamond_hoe" or

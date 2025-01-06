@@ -123,9 +123,14 @@ img
 	border: none;
 }
 
-p.version
+p.version, a.currentSeed
 {
-	color: #009900;
+    color: #009900;
+}
+
+a.currentSeed
+{
+    font-weight: bold;
 }
 
 div.itemcats

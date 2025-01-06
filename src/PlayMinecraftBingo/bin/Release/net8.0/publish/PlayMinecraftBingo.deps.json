@@ -7,12 +7,12 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {},
     ".NETCoreApp,Version=v8.0/linux-x64": {
-      "PlayMinecraftBingo/1.0.25001.1052": {
+      "PlayMinecraftBingo/1.0.25006.1133": {
         "dependencies": {
           "DavePusey.BuildInfoAdapter": "1.0.22019.1330",
           "MySql.Data": "9.1.0",
-          "PlayMinecraftBingo.libFetchrActiveItems": "5.2.0.6",
-          "PlayMinecraftBingo.libFetchrCardGen": "5.2.0.1",
+          "PlayMinecraftBingo.libFetchrActiveItems": "5.2.1.2",
+          "PlayMinecraftBingo.libFetchrCardGen": "5.2.1.2",
           "System.Text.Json": "9.0.0"
         },
         "runtime": {
@@ -105,39 +105,39 @@
           }
         }
       },
-      "PlayMinecraftBingo.libFetchrActiveItems/5.2.0.6": {
+      "PlayMinecraftBingo.libFetchrActiveItems/5.2.1.2": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
-          "PlayMinecraftBingo.libFetchrVersion": "5.2.0.1",
+          "PlayMinecraftBingo.libFetchrVersion": "5.2.1.1",
           "SharpNBT": "1.3.1"
         },
         "runtime": {
           "lib/net8.0/libFetchrActiveItems.dll": {
-            "assemblyVersion": "5.2.0.6",
-            "fileVersion": "5.2.0.6"
+            "assemblyVersion": "5.2.1.2",
+            "fileVersion": "5.2.1.2"
           }
         }
       },
-      "PlayMinecraftBingo.libFetchrCardGen/5.2.0.1": {
+      "PlayMinecraftBingo.libFetchrCardGen/5.2.1.2": {
         "dependencies": {
-          "PlayMinecraftBingo.libFetchrActiveItems": "5.2.0.6",
-          "PlayMinecraftBingo.libFetchrVersion": "5.2.0.1"
+          "PlayMinecraftBingo.libFetchrActiveItems": "5.2.1.2",
+          "PlayMinecraftBingo.libFetchrVersion": "5.2.1.1"
         },
         "runtime": {
           "lib/net8.0/libFetchrCardGen.dll": {
-            "assemblyVersion": "5.2.0.1",
-            "fileVersion": "5.2.0.1"
+            "assemblyVersion": "5.2.1.2",
+            "fileVersion": "5.2.1.2"
           }
         }
       },
-      "PlayMinecraftBingo.libFetchrVersion/5.2.0.1": {
+      "PlayMinecraftBingo.libFetchrVersion/5.2.1.1": {
         "dependencies": {
           "PlayMinecraftBingo.libMinecraftVersion": "1.21.4"
         },
         "runtime": {
           "lib/net8.0/libFetchrVersion.dll": {
-            "assemblyVersion": "5.2.0.1",
-            "fileVersion": "5.2.0.1"
+            "assemblyVersion": "5.2.1.1",
+            "fileVersion": "5.2.1.1"
           }
         }
       },
@@ -334,7 +334,7 @@
     }
   },
   "libraries": {
-    "PlayMinecraftBingo/1.0.25001.1052": {
+    "PlayMinecraftBingo/1.0.25006.1133": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -409,26 +409,26 @@
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
     },
-    "PlayMinecraftBingo.libFetchrActiveItems/5.2.0.6": {
+    "PlayMinecraftBingo.libFetchrActiveItems/5.2.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-H1VwCU9dtvLj3opBe8/p2b76CALbDohA0eD38Kqq3XEY+eYkwMg+6wrlFlYLogRmuke+ZP8Pi1TYkS6vG5TC9g==",
-      "path": "playminecraftbingo.libfetchractiveitems/5.2.0.6",
-      "hashPath": "playminecraftbingo.libfetchractiveitems.5.2.0.6.nupkg.sha512"
+      "sha512": "sha512-xuecdagITde+vLfS1J7M8Mja9EJkzCIKtsmSv7US9M1MFdnw9D1WAo9Qq22QGT9BBtmB+9ZSszKDEhlmDGfksQ==",
+      "path": "playminecraftbingo.libfetchractiveitems/5.2.1.2",
+      "hashPath": "playminecraftbingo.libfetchractiveitems.5.2.1.2.nupkg.sha512"
     },
-    "PlayMinecraftBingo.libFetchrCardGen/5.2.0.1": {
+    "PlayMinecraftBingo.libFetchrCardGen/5.2.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7uU8WYBCE+OpfcwIN02a3VOdUamHWEc80xqx0eIeHt6+3hz+TCuKqqjt4xwdn1CDC10HjkpffIVbNmftIUUdNg==",
-      "path": "playminecraftbingo.libfetchrcardgen/5.2.0.1",
-      "hashPath": "playminecraftbingo.libfetchrcardgen.5.2.0.1.nupkg.sha512"
+      "sha512": "sha512-Tbyxfs3RUs86IDuVCXjikzrmuud3IpJI8PYfLohzSmYyYdNmJAfDXwdP2QBhtw/F0NQm7JFaheOrnxngUWiw7g==",
+      "path": "playminecraftbingo.libfetchrcardgen/5.2.1.2",
+      "hashPath": "playminecraftbingo.libfetchrcardgen.5.2.1.2.nupkg.sha512"
     },
-    "PlayMinecraftBingo.libFetchrVersion/5.2.0.1": {
+    "PlayMinecraftBingo.libFetchrVersion/5.2.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1eaLLPlNy3UZIvZZwZWsODPzIFLNJgHYZhp4NSTj9mepb2CQAKBIz+j/S7PFojKXVHZP0R0caYeP2uyXSk+0tg==",
-      "path": "playminecraftbingo.libfetchrversion/5.2.0.1",
-      "hashPath": "playminecraftbingo.libfetchrversion.5.2.0.1.nupkg.sha512"
+      "sha512": "sha512-KbmmXNDy6ya5nZfU5DFY2TsF78Oh8H2lwg+oAdwkl4oNhUgMlkwjJsvvPXajmp+VoTQbx1eyX/uuFlMqLXyjcA==",
+      "path": "playminecraftbingo.libfetchrversion/5.2.1.1",
+      "hashPath": "playminecraftbingo.libfetchrversion.5.2.1.1.nupkg.sha512"
     },
     "PlayMinecraftBingo.libMinecraftVersion/1.21.4": {
       "type": "package",
