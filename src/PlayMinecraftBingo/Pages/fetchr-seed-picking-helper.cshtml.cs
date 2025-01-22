@@ -15,7 +15,11 @@ namespace PlayMinecraftBingo.Pages
 		public int Lapis { get; set; }
 		public int Diamond { get; set; }
 
-		public bool BadR1 { get; set; }
+        public bool Shears { get; set; }
+        public bool SmithingTable { get; set; }
+        public bool Trim { get; set; }
+
+        public bool BadR1 { get; set; }
 		public bool BadR2 { get; set; }
 		public bool BadR3 { get; set; }
 		public bool BadR4 { get; set; }
