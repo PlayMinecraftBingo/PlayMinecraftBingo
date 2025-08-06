@@ -1,5 +1,4 @@
-using libFetchrActiveItems.DataStructures;
-using libFetchrActiveItems;
+using libFetchr;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
@@ -17,22 +16,17 @@ namespace PlayMinecraftBingo.Pages
 		[BindProperty(SupportsGet = true)]
 		public string? View { get; set; } = "grid";
 
-		public Dictionary<ItemPoolCategory, List<ItemData>> CategoryList { get; set; } = ItemPool.GetSortedItemPool(new(CurrentVersions.Fetchr, CurrentVersions.Minecraft));
+		public List<FetchrCategory> CategoryList { get; set; } = new Fetchr(CurrentVersions.Fetchr).GetItemPool(ItemPoolSorting.ByCountDescendingThenWeightDescending);
 
 		public void OnGet()
         {
         }
 
-		public string RenderItem(ItemData item)
-		{
-			return RenderItem(new FetchrItem(item));
-		}
-
 		public string RenderItem(FetchrItem item)
 		{
-			string itemName = item.Label;
-			string invIcon = item.InvIcon;
-			string itemId = item.FetchrId;
+			string itemName = item.Name;
+			string invIcon = item.InventoryIcon.ToLower();
+			string itemId = item.Id;
 
 			string htmlOut = "<img class=\"mcitem\" data-mcitem=\"" + itemId + "\" src=\"/images/mc-items/" + invIcon.ToLower() + "\" alt=\"" + itemName + "\" title=\"" + itemName + "\" />";
 			return htmlOut;

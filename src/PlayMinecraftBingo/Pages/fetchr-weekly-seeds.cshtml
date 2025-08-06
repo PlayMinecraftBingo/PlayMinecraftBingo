@@ -1,5 +1,5 @@
 ﻿@page "{prefix:min(10)?}"
-@using libFetchrVersion
+@using libFetchr
 @model PlayMinecraftBingo.Pages.fetchr_weekly_seedsModel
 @{
 	ViewData["Title"] = "Fetchr Weekly Challenge Seeds";
@@ -15,7 +15,7 @@
 		<p class="alertbox">@Html.Raw(ab.Message)</p>
 	}
 
-	<p class="version">Version @Model.Seeds.FetchrVersion.Fetchr.ToVersionString() for Minecraft @Model.Seeds.McVersion</p>
+	<p class="version">Version @Model.Seeds.FetchrVersion.ToString() for Minecraft @Model.Seeds.McVersion</p>
 	<p class="heading">@Model.Seeds.EffectiveDate.ToString("dddd dd MMMM yyyy")</p>
 	<div class="bingoseedrow">
 		@if (Model.Seeds.Seed1 != 0)

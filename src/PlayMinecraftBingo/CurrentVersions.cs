@@ -1,11 +1,10 @@
-﻿using libFetchrVersion;
-using libMinecraftVersion;
+﻿using libFetchr;
 
 namespace PlayMinecraftBingo
 {
 	internal class CurrentVersions
 	{
-        internal static readonly FetchrVersion Fetchr = FetchrVersion.Fetchr_5_2_2;
-        internal static readonly FetchrMinecraftVersion Minecraft = FetchrMinecraftVersion.Minecraft_1_21_4;
+        internal static readonly FetchrVersion Fetchr = FetchrVersion.V5_2_2_from_1_21_4;
+        //internal static readonly MinecraftVersion Minecraft = MinecraftVersion.V1_21_4;
     }
 }

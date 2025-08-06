@@ -1,12 +1,11 @@
 @page "{seed:int?}"
-@using libFetchrVersion
-@using libMinecraftVersion
+@using libFetchr
 @model PlayMinecraftBingo.Pages.fetchr_seed_picking_helperModel
 @{
     ViewData["Title"] = "[" + Model.Seed + "] Fetchr Seed Picking Helper";
 }
 <p class="pageheading">Fetchr Seed Picking Helper</p>
-<p class="version">Version @CurrentVersions.Fetchr.ToVersionString() for Minecraft @CurrentVersions.Minecraft.ToVersionString()</p>
+<p class="version">Version @CurrentVersions.Fetchr.ToString() for Minecraft @CurrentVersions.Fetchr.Minecraft.ToString()</p>
 
 <div class="bingoseedrow">
 	<form method="post">Seed: <input type="text" name="seed" value="" /><input type="submit" value="Go"/></form>
@@ -18,7 +17,7 @@
 		<div class="bingoseed">
 			<p class="bingoseedtitle">Card Preview</p>
 			<p class="bingoseednumber">@Model.Seed</p>
-            @Html.Raw(FetchrCardPreview.Render(new(CurrentVersions.Fetchr, CurrentVersions.Minecraft), Model.Seed, true, true))
+            @Html.Raw(FetchrCardPreview.Render(CurrentVersions.Fetchr, Model.Seed, true, true))
             <p><a href="@(Model.Seed - 10)">&lt; @(Model.Seed - 10)</a> - <a class="currentSeed" href="@Model.Seed">@Model.Seed</a> - <a href="@(Model.Seed + 10)">@(Model.Seed + 10) &gt;</a></p>
 		</div>
 	</div>

@@ -1,5 +1,4 @@
-﻿using libFetchrVersion;
-using libMinecraftVersion;
+﻿using libFetchr;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -10,8 +9,8 @@ namespace PlayMinecraftBingo
 	{
 		public byte Prefix { get; init; }
 		public DateTime EffectiveDate { get; init; }
-		public required FetchrVersionData FetchrVersion { get; init; }
-        public string McVersion => FetchrVersion.Minecraft.ToVersionString();
+		public required FetchrVersion FetchrVersion { get; init; }
+        public string McVersion => FetchrVersion.Minecraft.ToString();
 		public bool ShowPreviews { get; init; }
 		public int Seed1 { get; init; }
 		public int Seed2 { get; init; }
@@ -87,11 +86,11 @@ namespace PlayMinecraftBingo
 
 						dbResult.Read();
 
-						return new()
-						{
-							Prefix = dbResult.GetByte(0),
-							EffectiveDate = Util.FromUnixTimestamp(dbResult.GetUInt32(1)),
-							FetchrVersion = new((FetchrVersion)dbResult.GetByte(2), (FetchrMinecraftVersion)dbResult.GetByte(3)),
+                        return new()
+                        {
+                            Prefix = dbResult.GetByte(0),
+                            EffectiveDate = Util.FromUnixTimestamp(dbResult.GetUInt32(1)),
+                            FetchrVersion = FetchrVersion.FromId(dbResult.GetByte(2)),
 							ShowPreviews = dbResult.GetBoolean(4),
 							Seed1 = dbResult.GetInt32(5),
 							Seed2 = dbResult.GetInt32(6),

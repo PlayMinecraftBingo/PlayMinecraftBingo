@@ -1,5 +1,5 @@
 ﻿@page
-@using libFetchrVersion
+@using libFetchr
 @model IndexModel
 @{
 	ViewData["Title"] = "Play Minecraft Bingo";
@@ -22,7 +22,7 @@
 	<div class="flexcell">
 		<p>A modern re-creation...</p>
 		<p class="heading">Fetchr by NeunEinser</p>
-		<p class="version">Version @CurrentVersions.Fetchr.ToVersionString() for Minecraft @CurrentVersions.Minecraft.ToVersionString()</p>
+		<p class="version">Version @CurrentVersions.Fetchr.ToString() for Minecraft @CurrentVersions.Fetchr.Minecraft.ToString()</p>
 		<p class="sideheading">
 			<strong>Download:</strong> <a href="https://modrinth.com/datapack/fetchr" target="_blank">Modrinth</a>
 			&nbsp;|&nbsp;

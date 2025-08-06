@@ -1,13 +1,11 @@
 ﻿@page
-@using libFetchrActiveItems
-@using libFetchrActiveItems.DataStructures
-@using libFetchrVersion
+@using libFetchr
 @model PlayMinecraftBingo.Pages.fetchr_blind_trackerModel
 @{
 	ViewData["Title"] = "Fetchr Blind Item Tracker";
 }
 <p class="pageheading">Fetchr Blind Item Tracker</p>
-<p class="version">Version @CurrentVersions.Fetchr.ToVersionString() for Minecraft @CurrentVersions.Minecraft.ToVersionString()</p>
+<p class="version">Version @CurrentVersions.Fetchr.ToString() for Minecraft @CurrentVersions.Fetchr.Minecraft.ToString()</p>
 <p>There are @Model.ItemCount items (@Model.UniqueItemCount unique) listed within @Model.CategoryCount categories.</p>
 <p>Once an item has been selected from a category, no other items can be selected from the same category.</p>
 <p>This also includes other categories that the same item is also listed in.</p>
@@ -28,19 +26,19 @@
 		int catId = 0;
 		int itemId = 0;
 	}
-	@foreach (ItemPoolCategory category in Model.CategoryList.Keys)
+	@foreach (FetchrCategory category in Model.CategoryList)
 	{
 		catId++;
 		string itemCatId = "itemcat" + catId.ToString().PadLeft(3, '0');
 		<div class="itemcat" id="@itemCatId">
-            <p class="catheading">@category.TranslationName</p>
+            <p class="catheading">@category.Name</p>
 			<table class="itemcat">
 				<tr>
 					<th>&nbsp;</th>
 					<th>Item</th>
 					<th class="blindbuttons">&nbsp;</th>
 				</tr>
-				@foreach(ItemData item in Model.CategoryList[category])
+				@foreach(FetchrItem item in category.Items)
 				{
 					itemId++;
 					string itemRowId = "itemrow" + itemId.ToString().PadLeft(3, '0');
@@ -48,7 +46,7 @@
 					string itemNoId = itemRowId + "no";
 					string itemClearId = itemRowId + "clear";
 					<tr id="@itemRowId">
-						<td class="invicon">@Html.Raw(Model.RenderItem(item))</td>
+						<td class="invicon">@Html.Raw(Model.RenderItem(item, Model.CategoryList))</td>
 						<td class="blindbuttons">
 							@Html.Raw("<input type=\"button\" value=\"Yes\" id=\"" + itemYesId + "\" onclick=\"HaveItem(" + itemId + ")\" />")
 							@Html.Raw("<input type=\"button\" value=\"No\" id=\"" + itemNoId + "\" onclick=\"NotItem(" + itemId + ")\" />")

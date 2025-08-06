@@ -1,26 +1,25 @@
-using libFetchrActiveItems.DataStructures;
-using libFetchrCardGen;
-using libFetchrVersion;
+using libFetchr;
 
 namespace PlayMinecraftBingo
 {
 	public class FetchrCardPreview
     {
-		public static string Render(FetchrVersionData version, int seed, bool highlightBad = false, bool withLabels = false)
+		public static string Render(FetchrVersion version, int seed, bool highlightBad = false, bool withLabels = false)
 		{
             if (seed == 0) return "";
 
             string htmlOut = "<table class=\"bingocard\">";
 
-			GeneratedCard card = FetchrCardGen.GenerateFromSeed(version, seed);
+            Fetchr f = new(version);
+			FetchrCard card = f.GenerateCardFromSeed(seed);
 
             for (int slot = 0; slot < 25; slot++)
             {
                 if (slot % 5 == 0) htmlOut += "<tr>";
 
                 FetchrItem item = card.Items[slot];
-                string InvIcon = item.InvIcon;
-                string Label = item.Label;
+                string InvIcon = item.InventoryIcon.ToLower();
+                string Label = item.Name;
                 htmlOut += "<td";
                 if (highlightBad && IsSlowMobDrop(item)) htmlOut += " class=\"slowmobdrop\"";
                 else if (highlightBad && IsBad(item)) htmlOut += " class=\"bad\"";
@@ -37,7 +36,7 @@ namespace PlayMinecraftBingo
 
         public static bool IsSlowMobDrop(FetchrItem item)
         {
-            return item.FetchrId switch
+            return item.Id switch
             {
                 "bone" or
                 "cake" or
@@ -63,7 +62,7 @@ namespace PlayMinecraftBingo
 
         public static bool IsBad(FetchrItem item)
         {
-            return item.FetchrId switch
+            return item.Id switch
             {
                 "activator_rail" or
                 "amethyst_block" or
